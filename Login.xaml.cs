@@ -35,21 +35,31 @@ namespace Avto_deli
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-            if ((bool)Database_Radiobuton.IsChecked)
-            {
+            string ime = Username_Text.Text;
+            string geslo = Password_Text.Password;
 
-            }
-            else if ((bool)GeneričnaZbirka_Radiobuton.IsChecked)
+            if (db.Preveri_ime_geslo(ime, geslo))
             {
-
+                if ((bool)Database_Radiobuton.IsChecked)
+                {
+                    Console.WriteLine("1");
+                }
+                else if ((bool)GeneričnaZbirka_Radiobuton.IsChecked)
+                {
+                    Console.WriteLine("2");
+                }
+                else if ((bool)VerižniSeznam_Radiobuton.IsChecked)
+                {
+                    Console.WriteLine("3");
+                }
             }
-            else if ((bool)VerižniSeznam_Radiobuton.IsChecked)
-            {
-
-            }
+            
 
 
         }
+
+
+    
 
         private void Register_Button_Click(object sender, RoutedEventArgs e)
         {

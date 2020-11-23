@@ -69,12 +69,13 @@ namespace Avto_deli
         public bool Preveri_ime_geslo(string ime, string geslo)
         {
             string pass = "@dminPassword";
-            List<string> check = new List<string>();
+            List<string> check = Vrni_Username();
             if (check.Contains(ime))
             {
                 
-                using (SQLiteCommand cmd = new SQLiteCommand(@"SELECT Password FROM Registrirani WHERE ime = @ime;", con))
+                using (SQLiteCommand cmd = new SQLiteCommand(@"SELECT Password FROM Registrirani WHERE Username = (@ime);", con))
                 {
+                    cmd.Parameters.AddWithValue("@Ime", ime);
                     using (SQLiteDataReader rdr = cmd.ExecuteReader())
                     {
                         while (rdr.Read())
