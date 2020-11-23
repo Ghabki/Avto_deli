@@ -7,7 +7,7 @@ using System.Data.SQLite;
 
 namespace Avto_deli
 {
-    class Database
+    public class Database
     {
         public static SQLiteConnection con;
 
@@ -32,6 +32,79 @@ namespace Avto_deli
                 cmd.CommandText = @"CREATE TABLE Registrirani (ID INTEGER PRIMARY KEY, Username TEXT, Password TEXT);"; //Intiger primary key avtomatsko naredi da se poveca za 1
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        public List<string> Vrni_Username()
+        {
+            List<string> vrni = new List<string>();
+            using (SQLiteCommand cmd = new SQLiteCommand(@"SELECT Username FROM Registrirani;", con))
+            {
+                using (SQLiteDataReader rdr = cmd.ExecuteReader())
+                {
+                    while (rdr.Read())
+                    {
+                        vrni.Add(rdr.GetString(0));
+                        
+                    }
+                    
+                }
+            }
+            return vrni;
+
+        }
+
+        public void Dodaj_Uporabnika(string ime, string geslo)
+        {
+            using (SQLiteCommand cmd = new SQLiteCommand(con))
+            {
+                cmd.CommandText = @"INSERT INTO Registrirani (Username, Password) VALUES (@Ime, @Geslo);";
+                cmd.Parameters.AddWithValue("@Ime", ime);
+                cmd.Parameters.AddWithValue("@Geslo", geslo);
+                cmd.Prepare();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+        public bool Preveri_ime_geslo(string ime, string geslo)
+        {
+            string pass = "@dminPassword";
+            List<string> check = new List<string>();
+            if (check.Contains(ime))
+            {
+                
+                using (SQLiteCommand cmd = new SQLiteCommand(@"SELECT Password FROM Registrirani WHERE ime = @ime;", con))
+                {
+                    using (SQLiteDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            pass = rdr.GetString(0); 
+                        }
+                    }
+
+                }
+                if (geslo.Equals(pass))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        public SQLiteConnection Povezava_db
+        {
+            get{ return con;}
         }
 
 

@@ -5,9 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avto_deli"
         mc:Ignorable="d"
-        Title="Register" Height="450" Width="800">
+        Title="Register" Height="350" Width="300"  Background="#3c404d">
     <Grid>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="320,175,0,0" VerticalAlignment="Top" Height="110" Width="205"/>
+        <Button Content="Register" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top" Width="265" Height="30" FontWeight="Bold" Background="#FF645F6A" Click="Button_Click_1"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="10,255,0,0" VerticalAlignment="Top" Width="265" Height="30" FontWeight="Bold" Background="#FF645F6A" Click="Button_Click"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Reenter password" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="Black"/>
+        <PasswordBox x:Name="Add_Password" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Width="265" Height="23"/>
+        <PasswordBox x:Name="Add_RePassword" HorizontalAlignment="Left" Margin="10,162,0,0" VerticalAlignment="Top" Width="265" Height="23"/>
+        <TextBox x:Name="Add_Username" HorizontalAlignment="Left" Height="24" Margin="10,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
+        <Label x:Name="Lable_Notificarion" Content="" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" Width="265" FontWeight="Bold"/>
 
     </Grid>
 </Window>
