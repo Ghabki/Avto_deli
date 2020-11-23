@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avto_deli"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Avto Deli" Height="450" Width="300"  Background="#3c404d">
     <Grid>
-        
+
+        <Button x:Name="Login_Button" Content="Login" HorizontalAlignment="Left" Margin="20,300,0,0" VerticalAlignment="Top" Width="250" Height="35" FontSize="16" Background="#FF645F6A" FontWeight="Bold"/>
+        <Button x:Name="Register_Button" Content="Register" HorizontalAlignment="Left" Margin="20,350,0,0" VerticalAlignment="Top" Width="250" Height="35" FontWeight="Bold" FontSize="16" Background="#FF645F6A" Click="Register_Button_Click"/>
+        <PasswordBox x:Name="Password_Text" HorizontalAlignment="Left" Margin="20,207,0,0" VerticalAlignment="Top" Width="250" Height="28" FontSize="16"/>
+        <TextBox x:Name="Username_Text" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Margin="20,131,0,0" FontSize="18"/>
+        <Label Content="Username:" HorizontalAlignment="Left" Margin="20,105,0,0" VerticalAlignment="Top" Width="180" FontWeight="Bold"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="20,181,0,0" VerticalAlignment="Top" Width="180" FontWeight="Bold"/>
+        <Label Content="Gabriel Utenkar, 2020" HorizontalAlignment="Left" Margin="150,383,0,0" VerticalAlignment="Top" Width="132"/>
+        <Label Content="Avto deli" HorizontalAlignment="Left" Margin="55,15,0,0" VerticalAlignment="Top" Height="90" Width="190" FontFamily="Impact" FontSize="48"/>
+        <RadioButton x:Name="GeneričnaZbirka" Content="Generična zbrika" HorizontalAlignment="Left" Margin="163,250,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="VerižniSeznam" Content="Verižni seznam" HorizontalAlignment="Left" Margin="20,270,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Database" Content="Database" HorizontalAlignment="Left" Margin="20,250,0,0" VerticalAlignment="Top" IsChecked="True"/>
+
     </Grid>
 </Window>
