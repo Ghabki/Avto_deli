@@ -24,13 +24,10 @@ namespace Avto_deli
     {
         private static Database db = new Database();
 
-
         public Login()
         {
             InitializeComponent();
             Innit();
-
-
         }
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
@@ -42,24 +39,30 @@ namespace Avto_deli
             {
                 if ((bool)Database_Radiobuton.IsChecked)
                 {
-                    Console.WriteLine("1");
+                    Main_DB_Stran MDBS = new Main_DB_Stran();
+                    this.Close();
+                    MDBS.Show();
                 }
                 else if ((bool)GeneričnaZbirka_Radiobuton.IsChecked)
                 {
-                    Console.WriteLine("2");
+                    Main_Genericna_zbirka_Stran MDBS = new Main_Genericna_zbirka_Stran();
+                    this.Close();
+                    MDBS.Show();
                 }
                 else if ((bool)VerižniSeznam_Radiobuton.IsChecked)
                 {
-                    Console.WriteLine("3");
+                    Main_Verizni_Seznam_Stran MDBS = new Main_Verizni_Seznam_Stran();
+                    this.Close();
+                    MDBS.Show();
                 }
             }
-            
-
-
+            else
+            {
+                Login_Lable.Visibility = Visibility.Visible;
+                Login_Lable.Foreground = new SolidColorBrush(Colors.Red);
+                Login_Lable.Content = "Napačno ime ali geslo";
+            }
         }
-
-
-    
 
         private void Register_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -69,7 +72,6 @@ namespace Avto_deli
 
         private void Innit()
         {
-
             #region check_direktoriji_in_fili
             //Database direktory in njegova inicializacija
             try
@@ -86,8 +88,6 @@ namespace Avto_deli
                     Console.WriteLine("Narejen direktorij Data");
 
                     Innit_DB();
-
-                    //TODO ----------------------------------------------------------dodaj se tabelo z dejanskimi podatki in tabelo z nastavitve in pridobivanje usernama
                 }
             }
             catch (Exception ex)
@@ -99,41 +99,41 @@ namespace Avto_deli
 
             try
             {
-                if (Directory.Exists(@".\Xml"))
+                if (Directory.Exists(@".\Text"))
                 {
-                    Console.WriteLine("xml path exists already.");
+                    Console.WriteLine("Text path exists already.");
                 }
                 else
                 {
-                    DirectoryInfo di = Directory.CreateDirectory(@".\Xml");
-                    Console.WriteLine("Narejen direktorij Xml");
+                    DirectoryInfo di = Directory.CreateDirectory(@".\Text");
+                    Console.WriteLine("Narejen direktorij Text");
                 }
 
                 //Xml ko se vse prekopira gre xml file v smeti
-                if (Directory.Exists(@".\Xml_kanta"))
+                if (Directory.Exists(@".\Text_kanta"))
                 {
-                    Console.WriteLine("xml kanta path exists already.");
+                    Console.WriteLine("Text kanta path exists already.");
                 }
                 else
                 {
-                    DirectoryInfo di = Directory.CreateDirectory(@".\Xml_kanta");
-                    Console.WriteLine("Narejen direktorij Xml_kanta");
+                    DirectoryInfo di = Directory.CreateDirectory(@".\Text_kanta");
+                    Console.WriteLine("Narejen direktorij Text_kanta");
                 }
 
                 //Xml izhod  kamor izvori xml podatke
-                if (Directory.Exists(@".\Xml_Izhod"))
+                if (Directory.Exists(@".\Text_Izhod"))
                 {
-                    Console.WriteLine("xml Izhod path exists already.");
+                    Console.WriteLine("Text Izhod path exists already.");
                 }
                 else
                 {
-                    DirectoryInfo di = Directory.CreateDirectory(@".\Xml_Izhod");
-                    Console.WriteLine("Narejen direktorij xml_izhod");
+                    DirectoryInfo di = Directory.CreateDirectory(@".\Text_Izhod");
+                    Console.WriteLine("Narejen direktorij Text_izhod");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("kreacija direktorijec xml napaka");
+                Console.WriteLine("kreacija direktorijec Text napaka");
                 MessageBox.Show("Kreacija direktorijev error: " + ex, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 Close();
             }
@@ -146,8 +146,8 @@ namespace Avto_deli
         {
             try
             {
-                db.Start_Database(); //-------------------------------------------------------------------------------------------------------- pol ko rabis prižgi
-                db.Create_Login_base();// to je tukaj za setat prvo tabelo. na to mesto dodaj se ostalo
+                db.Start_Database(); 
+                db.Create_Login_base();
                 Console.WriteLine("ou yea baza dela");
             }
             catch (Exception ex)
@@ -162,7 +162,6 @@ namespace Avto_deli
         {
             get { return db; }
         }
-
 
     }
 }

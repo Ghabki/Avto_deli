@@ -1,0 +1,50 @@
+﻿<Window x:Class="Avto_deli.Main_DB_Stran"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Avto_deli"
+        mc:Ignorable="d"
+        Title="Avto_Deli_Main" Height="768" Width="1366" Background="#3c404d">
+    <Grid>
+        <ListView x:Name="ListView_DB" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="1358">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" Width="120" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Naziv" Width="120" DisplayMemberBinding="{Binding Naziv}" />
+                    <GridViewColumn Header="Opis" Width="500" DisplayMemberBinding="{Binding Opis}" />
+                    <GridViewColumn Header="Tip_Avta" Width="200" DisplayMemberBinding="{Binding Tip_avta}" />
+                    <GridViewColumn Header="Model_Avta" Width="120" DisplayMemberBinding="{Binding Model_Avta}" />
+                    <GridViewColumn Header="Cena" Width="120" DisplayMemberBinding="{Binding Cena}" />
+                    <GridViewColumn Header="Količina" Width="120" DisplayMemberBinding="{Binding Količina}" />
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="Uvozi_iz_datoteke" Content="Uvozi iz datoteke (/Text/tekst.txt)" HorizontalAlignment="Left" Margin="880,665,0,0" VerticalAlignment="Top" Width="195" Height="47" Click="Uvozi_iz_datoteke_Click"/>
+        <Button x:Name="Izvozi_iz_datoteke" Content="Izvozi v datoteko (/Text/tekst__Izhod)" HorizontalAlignment="Left" Margin="1120,665,0,0" VerticalAlignment="Top" Width="195" Height="47" Click="Izvozi_iz_datoteke_Click"/>
+        <Button x:Name="Dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="290,530,0,0" VerticalAlignment="Top" Width="195" Height="47" Click="Dodaj_Click"/>
+        <Button x:Name="Izbrisi" Content="Izbrisi" HorizontalAlignment="Left" Margin="1120,535,0,0" VerticalAlignment="Top" Width="195" Height="47" Click="Izbrisi_Click"/>
+        <Label Content="Id ki ga zelis izbrisati" HorizontalAlignment="Left" Margin="915,505,0,0" VerticalAlignment="Top" Height="33" Width="168" FontSize="16" Foreground="White"/>
+        <TextBox x:Name="ID_izbrisat" HorizontalAlignment="Left" Height="23" Margin="935,543,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Id                             količina" HorizontalAlignment="Left" Margin="860,589,0,0" VerticalAlignment="Top" Height="33" Width="223" FontSize="16" Foreground="White"/>
+        <TextBox x:Name="ID_Spremeniti" HorizontalAlignment="Left" Height="23" Margin="825,622,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="kolicina_Sprememba" HorizontalAlignment="Left" Height="23" Margin="985,622,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Spremeni" Content="Spremeni" HorizontalAlignment="Left" Margin="1120,598,0,0" VerticalAlignment="Top" Width="195" Height="47" Click="Spremeni_Click"/>
+        <Label HorizontalAlignment="Left" Margin="35,521,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
+        <Label Content="Količina" HorizontalAlignment="Left" Margin="0,696,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
+        <Label Content="Cena" HorizontalAlignment="Left" Margin="0,668,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
+        <Label Content="Model__avta" HorizontalAlignment="Left" Margin="0,640,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
+        <Label Content="Tip__avta" HorizontalAlignment="Left" Margin="0,612,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
+        <Label Content="Naziv" HorizontalAlignment="Left" Margin="3,556,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
+        <Label Content="Id" HorizontalAlignment="Left" Margin="0,528,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
+        <TextBox x:Name="Naziv_TextBox" HorizontalAlignment="Left" Height="23" Margin="105,564,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Opis_TextBox" HorizontalAlignment="Left" Height="23" Margin="105,592,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Tip_avta_TextBox" HorizontalAlignment="Left" Height="23" Margin="105,620,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Model_avta_TextBox" HorizontalAlignment="Left" Height="23" Margin="105,648,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Cena_TextBox" HorizontalAlignment="Left" Height="23" Margin="105,676,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Kolicina_TextBox" HorizontalAlignment="Left" Height="23" Margin="105,704,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Opis" HorizontalAlignment="Left" Margin="3,584,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
+        <TextBox x:Name="ID_TextBox" HorizontalAlignment="Left" Height="23" Margin="105,536,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+    </Grid>
+</Window>
