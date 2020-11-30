@@ -130,6 +130,17 @@ namespace Avto_deli
                     DirectoryInfo di = Directory.CreateDirectory(@".\Text_Izhod");
                     Console.WriteLine("Narejen direktorij Text_izhod");
                 }
+
+                //Vozel
+                if (Directory.Exists(@".\VozelInZbirka_Podatki"))
+                {
+                    Console.WriteLine("Text VozelInZbirka path exists already.");
+                }
+                else
+                {
+                    DirectoryInfo di = Directory.CreateDirectory(@".\VozelInZbirka_Podatki");
+                    Console.WriteLine("Narejen direktorij VozelInZbirka");
+                }
             }
             catch (Exception ex)
             {

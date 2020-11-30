@@ -148,6 +148,5 @@ namespace Avto_deli
             ListView_DB.ItemsSource = db.Vrni_vse();
         }
 
-
     }
 }
