@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avto_deli"
         mc:Ignorable="d"
-        Title="Main_Genericna_zbirka_Stran" Height="450" Width="800">
+        Title="Avto_Deli_Main" Height="768" Width="1366" Background="#3c404d">
     <Grid>
         
     </Grid>

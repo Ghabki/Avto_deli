@@ -8,7 +8,7 @@ namespace Avto_deli
 {
     public class Deli
     {
-        private int Id;
+        private int Idd;
         private string Naziv;
         private string Opis;
         private string Tip_avta;
@@ -16,10 +16,10 @@ namespace Avto_deli
         private int Cena;
         private int Kolicina;
 
-        public Deli() { }
-        public Deli(int id, string Naziv, string Opis, string Tip_avta, string Model_avta, int Cena, int Kolicina) {
+        public Deli() { }//tega ne rabi
+        public Deli(int id, string Naziv = "Genericen_avto", string Opis= "Izdelek", string Tip_avta="Vsi_tipi", string Model_avta="Vsi modeli", int Cena=1, int Kolicina=1) {
 
-            this.Id = id;
+            this.Idd = id;
             this.Naziv =Naziv;
             this.Opis =Opis;
             this.Tip_avta =Tip_avta;
@@ -27,7 +27,7 @@ namespace Avto_deli
             this.Cena = Cena;
             this.Kolicina = Kolicina;
         }
-        public int TaId { get { return this.Id; } set { Id = value; } }
+        public int TaId { get { return this.Idd; } set { Idd = value; } }
         public string TaNaziv { get { return this.Naziv; } set { Naziv = value; } }
         public string TaOpis { get { return this.Opis; } set { Opis = value; } }
         public string TaTip_avta { get { return this.Tip_avta; } set { Tip_avta= value; } }
@@ -37,7 +37,7 @@ namespace Avto_deli
 
         public override string ToString()
         {
-            return "ID:" + Id.ToString() + "  Naziv:" + Naziv + "  Opis:" + Opis + "  Tip Avta:" + Tip_avta + "  Model avta:" + Model_avta+ "  Cena:" + Cena+ "  Kolicina:" + Kolicina;
+            return "ID:" + Idd.ToString() + "  Naziv:" + Naziv + "  Opis:" + Opis + "  Tip Avta:" + Tip_avta + "  Model avta:" + Model_avta+ "  Cena:" + Cena+ "  Kolicina:" + Kolicina;
         }
     }
 
@@ -57,83 +57,85 @@ namespace Avto_deli
         public int Količina { get; set; }
     }
 
-    //public class GeneričnaZbirka<T>
-    //{
-    //    private T[] elementi;  //tabelarično polje
-    //    private int velikost;   //polje hrani trenutno število podatkov v tabeli    
-    //    public GeneričnaZbirka(int n = 0)  //konstruktor
-    //    { elementi = new T[n]; velikost = n; }//začetna dimenzija tabele/zbirke  
-    //    public T this[int indeks]   //indeksiranje 
-    //    {
-    //        get { return elementi[indeks]; } //dostop do posameznih polj
-    //        set { elementi[indeks] = value; }  //prirejanje vrednostim poljem
-    //    }
-    //    //napišimo property, s katerim pridobimo atribut velikost
-    //    public int Velikost
-    //    {
-    //        get { return velikost; }
-    //    }
+    public class GeneričnaZbirka<T>
+    {
 
-    //    //še get metoda za prodobivanje polja velikost
-    //    public int VrneVelikost()
-    //    {
-    //        return velikost;
-    //    }
+        private T[] elementi;  //tabelarično polje
+        private int velikost;   //polje hrani trenutno število podatkov v tabeli    
 
-    //    public void OdstraniVse()
-    //    {
-    //        elementi = new T[0];
-    //        velikost = 0;
-    //    }
-    //    public void Add(T podatek)  //metoda za dodajanje novega elementa 
-    //    {
-    //        Array.Resize(ref elementi, elementi.Length + 1);
-    //        elementi[velikost] = podatek;  //podatek zapišemo v prvo prosto celico
-    //        velikost = velikost + 1; //število zasedenih celic
-    //    }
-    //    //generična metoda za brisanje celice z določenim indeksom
-    //    public void Brisanje(int indeksCelice)
-    //    {
-    //        if (velikost == 0)
-    //            Console.WriteLine("Zbirka je prazna, brisanje NI možno!");
-    //        //celico brišemo le, če je njen indeks manjši od dimenzije zbirke  
-    //        // if (indeksCelice < elementi.Length && indeksCelice >= 0)
-    //        else if (indeksCelice < elementi.Length)
-    //        {
-    //            T[] zacasna = new T[elementi.Length - 1];
-    //            int j = 0;
-    //            for (int i = 0; i < elementi.Length; i++)
-    //            {
-    //                if (i != indeksCelice)
-    //                {
-    //                    zacasna[j] = elementi[i];
-    //                    j++;
-    //                }
-    //            }
-    //            elementi = zacasna;
-    //            velikost = velikost - 1;//zmanjšamo velikost zbirke
-    //        }
-    //        else {
-    //            Console.WriteLine("Brisanje NI možno, ker indeks št +" + indeksCelice + " NE obstaja!");
-    //        }
-    //        //generična metoda za izpis poljubne zbirke
-    //        public void IzpisZbirke()
-    //        {
-    //            if (velikost == 0)
-    //                Console.WriteLine("Zbirka je prazna!");
-    //            else
-    //            {
-    //                Console.WriteLine("Izpis ZBIRKE: ");
-    //                for (int i = 0; i < elementi.Length; i++)
-    //                    Console.WriteLine(elementi[i].ToString() + " ");
-    //                Console.WriteLine();
-    //            }
-    //        }
-    //    }
+        public GeneričnaZbirka(){}
+        public GeneričnaZbirka(int n = 0)  //konstruktor
+        { elementi = new T[n]; velikost = n; }//začetna dimenzija tabele/zbirke  
+        public T this[int indeks]   //indeksiranje 
+        {
+            get { return elementi[indeks]; } //dostop do posameznih polj
+            set { elementi[indeks] = value; }  //prirejanje vrednostim poljem
+        }
+        //napišimo property, s katerim pridobimo atribut velikost
+        public int Velikost
+        {
+            get { return velikost; }
+        }
 
+        //še get metoda za prodobivanje polja velikost
+        public int VrneVelikost()
+        {
+            return velikost;
+        }
 
+        public void OdstraniVse()
+        {
+            elementi = new T[0];
+            velikost = 0;
+        }
+        public void Add(T podatek)  //metoda za dodajanje novega elementa 
+        {
+            Array.Resize(ref elementi, elementi.Length + 1);
+            elementi[velikost] = podatek;  //podatek zapišemo v prvo prosto celico
+            velikost = velikost + 1; //število zasedenih celic
+        }
+        //generična metoda za brisanje celice z določenim indeksom
+        public void Brisanje(int indeksCelice)
+        {
+            if (velikost == 0)
+                Console.WriteLine("Zbirka je prazna, brisanje NI možno!");
+            //celico brišemo le, če je njen indeks manjši od dimenzije zbirke  
+            // if (indeksCelice < elementi.Length && indeksCelice >= 0)
+            else if (indeksCelice < elementi.Length)
+            {
+                T[] zacasna = new T[elementi.Length - 1];
+                int j = 0;
+                for (int i = 0; i < elementi.Length; i++)
+                {
+                    if (i != indeksCelice)
+                    {
+                        zacasna[j] = elementi[i];
+                        j++;
+                    }
+                }
+                elementi = zacasna;
+                velikost = velikost - 1;//zmanjšamo velikost zbirke
+            }
+            else
+            {
+                Console.WriteLine("Brisanje NI možno, ker indeks št +" + indeksCelice + " NE obstaja!");
+            }
+        }
+            //generična metoda za izpis poljubne zbirke
+        public void IzpisZbirke()
+        {
+            if (velikost == 0)
+                Console.WriteLine("Zbirka je prazna!");
+            else
+            {
+                Console.WriteLine("Izpis ZBIRKE: ");
+                for (int i = 0; i < elementi.Length; i++)
+                    Console.WriteLine(elementi[i].ToString() + " ");
+                Console.WriteLine();
+            }
+        }
 
-    //}
+    }
 
 
 
@@ -187,6 +189,8 @@ namespace Avto_deli
             }
             Console.Write("->KONEC\n");
         }
+
+        
         public void Izpis() //običajna metoda za izpis poljubnega seznama
         {
             //shranim začetek seznama

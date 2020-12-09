@@ -22,7 +22,7 @@ namespace Avto_deli
     {
 
         public string vsebinaa = "";
-        public Vozel<Deli> Glavni_Vozel = new Vozel<Deli>();
+        public Vozel<Deli> Glavni_Vozel;
 
         public Main_Verizni_Seznam_Stran()
         {
@@ -78,7 +78,7 @@ namespace Avto_deli
         {
             if (voz != null)
             {
-                if (voz.Vsebina != null)
+                if (voz.Vsebina != null) //prej sem narove vstavljal pa je to blo potrebno dodati. ta if ni več potreben
                 {
                     vsebinaa += voz.Vsebina.ToString() + "\n";
                     voz = voz.Nasl;
@@ -133,7 +133,9 @@ namespace Avto_deli
             }
             StreamWriter file = new StreamWriter(@"./VozelInZbirka_Podatki/" + fil + ".txt");
             file.WriteLine(izpis);
-            file.Close();
+            MessageBox.Show("Izpisano ", "Izpisano", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            file.Close();// lahko bi uporabu using stavek
         }
 
         private void naZaslon()
