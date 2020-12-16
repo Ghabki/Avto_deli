@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Avto_deli
 {
@@ -22,7 +12,7 @@ namespace Avto_deli
     {
 
         public string vsebinaa = "";
-        public Vozel<Deli> Glavni_Vozel;
+        public Vozel<Deli> Glavni_Vozel = new Vozel<Deli>();
 
         public Main_Verizni_Seznam_Stran()
         {
@@ -64,7 +54,7 @@ namespace Avto_deli
                 try
                 {
                     string[] vnesi = line.Split(';');
-                    Glavni_Vozel.Dodaj(new Deli(Convert.ToInt32(vnesi[0]) , vnesi[1], vnesi[2], vnesi[3], vnesi[4], Convert.ToInt32(vnesi[5]) , Convert.ToInt32(vnesi[6])));
+                    Glavni_Vozel.Dodaj(new Deli(Convert.ToInt32(vnesi[0]), vnesi[1], vnesi[2], vnesi[3], vnesi[4], Convert.ToInt32(vnesi[5]), Convert.ToInt32(vnesi[6])));
                 }
                 catch (Exception ex)
                 {

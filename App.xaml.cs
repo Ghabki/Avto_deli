@@ -13,5 +13,10 @@ namespace Avto_deli
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnExit(ExitEventArgs e)
+        {
+            base.OnExit(e);
+            Database.con.Close();
+        }
     }
 }

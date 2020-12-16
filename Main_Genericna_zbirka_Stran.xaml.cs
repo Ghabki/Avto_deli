@@ -2,17 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Avto_deli
 {
@@ -28,7 +18,6 @@ namespace Avto_deli
             InitializeComponent();
 
             Innit_Genericna();
-
         }
 
         private void Sort_Button_n(object sender, RoutedEventArgs e)
@@ -119,7 +108,6 @@ namespace Avto_deli
         }
 
 
-
         private Stack<T> Stack_primer<T>(GeneričnaZbirka<T> zbirka) {
             Stack<T> stak = new Stack<T>();
 
@@ -182,14 +170,6 @@ namespace Avto_deli
             }
 
         }
-
-
-        
-
-
-
-
-
 
 
 

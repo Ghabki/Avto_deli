@@ -1,24 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SQLite;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Avto_deli
 {
-    /// <summary>
-    /// Interaction logic for Main_DB_Stran.xaml
-    /// </summary>
+
     public partial class Main_DB_Stran : Window
     {
         private Database db = Login.Share_DB;
@@ -78,7 +65,6 @@ namespace Avto_deli
 
         private void Spremeni_Click(object sender, RoutedEventArgs e)
         {
-
             try
             {
                 int idd = Convert.ToInt32(ID_Spremeniti.Text);

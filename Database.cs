@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.IO;
-using System.Xml;
+
 
 namespace Avto_deli
 {
@@ -15,13 +12,16 @@ namespace Avto_deli
 
         public void Start_Database()
         {
-            con = new SQLiteConnection("Data Source=./Data/Data.db; Version = 3");
-            con.Open();
-        }
+            try
+            {
+                con = new SQLiteConnection("Data Source=./Data/Data.db; Version = 3");
+                con.Open();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
 
-        public void Stop_Database()
-        {
-            con.Close();
         }
 
         public void Create_Login_base()
@@ -169,9 +169,8 @@ namespace Avto_deli
                         izpis = rdr.GetInt32(0).ToString() +";"+ rdr.GetString(1) + ";" + rdr.GetString(2) + ";" + rdr.GetString(3) + ";" + rdr.GetString(4) + ";" + rdr.GetInt32(5).ToString() + ";" + rdr.GetInt32(6).ToString();
 
                         file.WriteLine(izpis);
-                        
+                     }
 
-                    }
                     file.Close();
                 }
             }
@@ -253,7 +252,6 @@ namespace Avto_deli
         {
             get{ return con;}
         }
-
 
     }
 }
