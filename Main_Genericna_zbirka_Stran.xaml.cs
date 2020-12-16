@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -68,21 +69,83 @@ namespace Avto_deli
                 {
                     File.Delete(@"./Gen_Mapa/Gen_data");
                 }
+                
                 Serializacija(Gen, @"./Gen_Mapa/Gen_data.xml");
+                MessageBox.Show("Shranjeno", "Shranjeno", MessageBoxButton.OK, MessageBoxImage.Information);
+
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Napaka pri shranjevanju" + ex, " Error", MessageBoxButton.OK, MessageBoxImage.Error);
-
-
             }
 
         }
 
+        private void Izbris_ID_Click(object sender, RoutedEventArgs e)
+        {
+            int ste = -1;
+            try
+            {
+                ste = ListBox_Gen.SelectedIndex;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("", " Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            if (!(ste == -1))
+            {
+                Gen.Brisanje(ste);
+            }
+            else
+            {
+                MessageBox.Show("Nisi izbral", " Error", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            Izpis_zaslon();
+
+        }
+
+        private void Random_button_Click(object sender, RoutedEventArgs e)
+        {
+            List<Deli> izpis = Randomizer(Gen);
+            ListBox_Gen.Items.Clear();
+
+            for (int i = 0; i < izpis.Count; i++)
+            {
+                ListBox_Gen.Items.Add(izpis[i]);
+            }
+        }
 
 
 
+        private Stack<T> Stack_primer<T>(GeneričnaZbirka<T> zbirka) {
+            Stack<T> stak = new Stack<T>();
 
+            T[] zac = zbirka.IzpisArray();
+            foreach (var item in zac)
+            {
+                stak.Push(item);
+            }
+            return stak;
+        }
+
+        private List<T> Randomizer<T>(GeneričnaZbirka<T> zbirka) {
+            T[] vse = zbirka.IzpisArray();
+            
+
+            Random rnd = new Random();
+            for (int i = vse.Length - 1; i > 0; i--)
+            {
+                int randomIndex = rnd.Next(0, vse.Length);
+
+                T temp = vse[i];
+                vse[i] = vse[randomIndex];
+                vse[randomIndex] = temp;
+            }
+            return vse.ToList();
+        }
 
         private void Innit_Genericna()
         {
@@ -106,7 +169,6 @@ namespace Avto_deli
                 //aaa.IzpisZbirke();
             Izpis_zaslon();
         }
-
 
         private void Izpis_zaslon()
         {
@@ -156,6 +218,6 @@ namespace Avto_deli
             }
         }
 
-        
+
     }
 }
