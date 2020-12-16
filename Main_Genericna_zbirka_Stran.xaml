@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Avto_Deli_Main" Height="768" Width="1366" Background="#3c404d">
     <Grid>
-        
+        <ListBox x:Name="ListBox_Gen" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="1358"/>
+        <Button x:Name="Sort_Button" Content="Sort po ceni" HorizontalAlignment="Left" Margin="1155,525,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Sort_Button_n"/>
+        <Button x:Name="Shrani_Button" Content="Shrani" HorizontalAlignment="Left" Margin="1155,635,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Shrani_Button_n"/>
+
     </Grid>
 </Window>

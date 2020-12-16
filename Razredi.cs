@@ -135,6 +135,11 @@ namespace Avto_deli
             }
         }
 
+        public T[] IzpisArray ()
+        {
+            return elementi;
+        }
+
     }
 
 

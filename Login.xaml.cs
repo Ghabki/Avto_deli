@@ -148,6 +148,28 @@ namespace Avto_deli
                 MessageBox.Show("Kreacija direktorijev error: " + ex, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 Close();
             }
+
+
+            try
+            {
+                if (Directory.Exists(@".\Gen_Mapa"))
+                {
+                    Console.WriteLine("That Gen_Mapa exists already.");
+                }
+                else
+                {
+                    DirectoryInfo di = Directory.CreateDirectory(@".\Gen_Mapa");
+                    Console.WriteLine("Narejen direktorij Data");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kreacija Gen_Mapa error: " + ex, " Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                
+            }
+
+
+
             #endregion
 
 
