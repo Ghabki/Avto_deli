@@ -12,6 +12,18 @@
         <Button x:Name="Shrani_Button" Content="Shrani" HorizontalAlignment="Left" Margin="1155,635,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Shrani_Button_n"/>
         <Button x:Name="Izbris_ID" Content="Delete označen" HorizontalAlignment="Left" Margin="930,525,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Izbris_ID_Click"/>
         <Button x:Name="Random_button" Content="Randomizer" HorizontalAlignment="Left" Margin="930,635,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Random_button_Click"/>
+        
+        <Button Content="Izpiši BMW" HorizontalAlignment="Left" Margin="10,660,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Button_Click"/>
+        <Button Content="Cena &gt; 5" HorizontalAlignment="Left" Margin="280,530,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Button_Click_1"/>
+        <Button Content="Cena&lt;5 in model &#xD;&#xA;začne na C" HorizontalAlignment="Left" Margin="280,595,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Button_Click_2"/>
+        <Button Content="Model ima več kot&#xD;&#xA;3 črke" HorizontalAlignment="Left" Margin="280,660,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Button_Click_3"/>
+        <Button Content="Izpiši prvih 10" HorizontalAlignment="Left" Margin="470,530,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Button_Click_4"/>
+        <Button Content="Id je sodo" HorizontalAlignment="Left" Margin="470,595,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Button_Click_5"/>
+        <Button Content="Izpiši zavore" HorizontalAlignment="Left" Margin="470,660,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Button_Click_6"/>
+        <Button Content="Preštej vse" HorizontalAlignment="Left" Margin="665,530,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Button_Click_7"/>
+        <Button Content="Preštej BMW" HorizontalAlignment="Left" Margin="665,595,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16"/>
+        <Button Content="Preštej koliko izdelkov&#xD;&#xA;ima količino &gt;10" HorizontalAlignment="Left" Margin="665,660,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16"/>
+        <Button Content="Izpiši iz originala" HorizontalAlignment="Left" Margin="10,530,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Izpiši_Button_Click"/>
 
     </Grid>
 </Window>

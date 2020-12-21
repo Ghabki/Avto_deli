@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+
 
 namespace Avto_deli
 {
@@ -53,7 +55,7 @@ namespace Avto_deli
         public int Količina { get; set; }
     }
 
-    public class GeneričnaZbirka<T>
+    public class GeneričnaZbirka<T> : IEnumerable
     {
 
         private T[] elementi;  //tabelarično polje
@@ -136,7 +138,10 @@ namespace Avto_deli
             return elementi;
         }
 
-
+        public IEnumerator GetEnumerator()
+        {
+            return elementi.GetEnumerator();
+        }
     }
 
 

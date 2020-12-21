@@ -4,6 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 
+using System.Data.Entity;
+
+
+
 namespace Avto_deli
 {
     /// <summary>
@@ -16,8 +20,9 @@ namespace Avto_deli
         public Main_Genericna_zbirka_Stran()
         {
             InitializeComponent();
-
+            
             Innit_Genericna();
+            //Linq1();
         }
 
         private void Sort_Button_n(object sender, RoutedEventArgs e)
@@ -107,6 +112,44 @@ namespace Avto_deli
             }
         }
 
+        private void Izpiši_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Izpis_zaslon();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Linq1();
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Linq2();
+        }
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Linq3();
+        }
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Linq4();
+        }
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Linq5();
+        }
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            Linq6();
+        }
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            Linq7();
+        }
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            Linq8();
+        }
+
 
         private Stack<T> Stack_primer<T>(GeneričnaZbirka<T> zbirka) {
             Stack<T> stak = new Stack<T>();
@@ -170,6 +213,120 @@ namespace Avto_deli
             }
 
         }
+
+        private void Linq1()//bmw
+        {
+            var zac = from Deli a in Gen where a.TaTip_avta=="BMW" select a;
+
+            //foreach (var item in maxsalary)
+            //{
+            //    Console.WriteLine(item.TaCena.ToString());
+            //}
+
+            ListBox_Gen.Items.Clear();
+
+            foreach (var item in zac)
+            {
+                ListBox_Gen.Items.Add(item);
+            }
+
+        }
+
+        private void Linq2()
+        {
+            var zac = from Deli a in Gen where a.TaCena >= 5 select a;
+            
+            ListBox_Gen.Items.Clear();
+            foreach (var item in zac)
+            {
+                ListBox_Gen.Items.Add(item);
+            }
+        }
+
+        private void Linq3()
+        {
+            var zac = from Deli a in Gen where a.TaCena < 5 && a.TaModel_avta[0] == 'C' select a;
+
+            ListBox_Gen.Items.Clear();
+            foreach (var item in zac)
+            {
+                ListBox_Gen.Items.Add(item);
+            }
+        }
+
+        private void Linq4()
+        {
+            var zac = from Deli a in Gen where a.TaModel_avta.Length > 3 select a;
+
+            ListBox_Gen.Items.Clear();
+            foreach (var item in zac)
+            {
+                ListBox_Gen.Items.Add(item);
+            }
+        }
+        private void Linq5()
+        {
+            var zac = from Deli a in Gen where a.TaId < 10 select a;
+
+
+            ListBox_Gen.Items.Clear();
+            foreach (var item in zac)
+            {
+                ListBox_Gen.Items.Add(item);
+            }
+        }
+        private void Linq6()//lambda
+        {
+            List<Deli>  tab= Gen.IzpisArray().ToList();//zelo nepotrebno but well majhna tabelca
+            var zac = tab.Where(n => n.TaId % 2 ==0);
+            ListBox_Gen.Items.Clear();
+            foreach (var item in zac)
+            {
+                ListBox_Gen.Items.Add(item);
+            }
+        }
+        private void Linq7()
+        {
+            List<Deli> tab = Gen.IzpisArray().ToList();//zelo nepotrebno but well majhna tabelca
+            var zac = tab.Where(n => n.TaOpis.ToLower().Contains("zavore"));
+
+            ListBox_Gen.Items.Clear();
+            foreach (var item in zac)
+            {
+                ListBox_Gen.Items.Add(item);
+            }
+        }
+        private void Linq8()
+        {
+            List<Deli> tab = Gen.IzpisArray().ToList();//zelo nepotrebno but well majhna tabelca
+            var zac = tab.Count(n => n.TaId>=0);
+            ListBox_Gen.Items.Clear();
+
+            ListBox_Gen.Items.Add(zac);
+            
+        }
+        private void Linq9()
+        {
+            List<Deli> tab = Gen.IzpisArray().ToList();//zelo nepotrebno but well majhna tabelca
+            var zac = tab.Count(n => n.TaTip_avta=="BMW");
+            ListBox_Gen.Items.Clear();
+            
+            
+            ListBox_Gen.Items.Add(zac);
+            
+        }
+        private void Linq10()
+        {
+            List<Deli> tab = Gen.IzpisArray().ToList();//zelo nepotrebno but well majhna tabelca
+            var zac = tab.Count(n => n.TaKolicina>=10);
+            ListBox_Gen.Items.Clear();
+
+            ListBox_Gen.Items.Add(zac);
+            
+        }
+
+
+
 
 
 
