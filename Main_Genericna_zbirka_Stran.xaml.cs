@@ -149,7 +149,14 @@ namespace Avto_deli
         {
             Linq8();
         }
-
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            Linq9();
+        }
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            Linq10();
+        }
 
         private Stack<T> Stack_primer<T>(GeneričnaZbirka<T> zbirka) {
             Stack<T> stak = new Stack<T>();

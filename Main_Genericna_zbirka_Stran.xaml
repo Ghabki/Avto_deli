@@ -21,8 +21,8 @@
         <Button Content="Id je sodo" HorizontalAlignment="Left" Margin="470,595,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Button_Click_5"/>
         <Button Content="Izpiši zavore" HorizontalAlignment="Left" Margin="470,660,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Button_Click_6"/>
         <Button Content="Preštej vse" HorizontalAlignment="Left" Margin="665,530,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Button_Click_7"/>
-        <Button Content="Preštej BMW" HorizontalAlignment="Left" Margin="665,595,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16"/>
-        <Button Content="Preštej koliko izdelkov&#xD;&#xA;ima količino &gt;10" HorizontalAlignment="Left" Margin="665,660,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16"/>
+        <Button Content="Preštej BMW" HorizontalAlignment="Left" Margin="665,595,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Button_Click_8"/>
+        <Button Content="Preštej koliko izdelkov&#xD;&#xA;ima količino &gt;10" HorizontalAlignment="Left" Margin="665,660,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Button_Click_9"/>
         <Button Content="Izpiši iz originala" HorizontalAlignment="Left" Margin="10,530,0,0" VerticalAlignment="Top" Width="170" Height="60" FontSize="16" Click="Izpiši_Button_Click"/>
 
     </Grid>
